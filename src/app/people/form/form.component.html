@@ -1,0 +1,27 @@
+<div class="box">
+  <form class="item" #f="ngForm" (ngSubmit)="f.form.valid && addPerson()">
+    <input
+      type="text"
+      name="name"
+      placeholder="Nombre"
+      [(ngModel)]="name"
+      required
+    />
+    <input
+      type="text"
+      name="lastname"
+      placeholder="Apellido"
+      [(ngModel)]="lastname"
+      required
+    />
+    <button type="submit">+</button>
+    <button
+      type="submit"
+      *ngIf="editMode==1"
+      class="buttonRed"
+      (click)="deletePerson()"
+    >
+      -
+    </button>
+  </form>
+</div>
